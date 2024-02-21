@@ -1,4 +1,4 @@
-module github.com/zizouhuweidi/joker
+module github.com/zizouhuweidi/jester
 
 go 1.22.0
 

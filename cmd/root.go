@@ -1,6 +1,3 @@
-/*
-Copyright © 2024 El Zubeir Huweidi
-*/
 package cmd
 
 import (
@@ -13,7 +10,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Joke represents the structure of a joke
 type Joke struct {
 	Type      string `json:"type"`
 	Setup     string `json:"setup"`
@@ -25,15 +21,14 @@ var (
 	category string
 )
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "joker",
-	Short: "your joke supplier",
-	Long: `joker is a CLI that provides you with a random joke or a joke from a specific category if you specify. For example:
+	Use:   "jester",
+	Short: "your own cli jester",
+	Long: `jester is a CLI that provides you with a random joke or a joke from a specific category if you specify. For example:
 
-   joker
-   joker dad
-   joker -l
+   jester
+   jester dad
+   jester -l
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		if listCategories, _ := cmd.Flags().GetBool("list"); listCategories {

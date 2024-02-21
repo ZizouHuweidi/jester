@@ -1,26 +1,21 @@
-# joker
-
+# jester
 if you like shit jokes, this is the cli program for you
 
 # Usage
-
 for a random joke:
-
 ```sh
-joker
+jester
 ```
-
 for a joke of a specific category:
 ```sh
-joker [category]
+jester [category]
 ```
-
 to get a list of available categories:
 ```sh
-joker -l
+jester -l
 ```
 
 # Installation
 ```sh 
-go install github.com/zizouhuweidi/joker@latest
+go install github.com/zizouhuweidi/jester@latest
 ```
