@@ -1,5 +1,5 @@
 # jester
-if you like shit jokes, this is the cli program for you
+if you like shit jokes, this is for you
 
 # Usage
 for a random joke:
