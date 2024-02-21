@@ -19,3 +19,8 @@ to get a list of available categories:
 ```sh
 joker -l
 ```
+
+# Installation
+```sh 
+go install github.com/zizouhuweidi/joker@latest
+```

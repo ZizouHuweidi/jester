@@ -4,6 +4,7 @@ Copyright © 2024 El Zubeir Huweidi
 package cmd
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
 	"math/rand"
@@ -19,7 +20,10 @@ type Joke struct {
 	Punchline string `json:"punchline"`
 }
 
-var category string
+var (
+	content  embed.FS
+	category string
+)
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -54,7 +58,7 @@ func init() {
 }
 
 func readJokesFromFile() ([]Joke, error) {
-	file, err := os.ReadFile("jokes.json")
+	file, err := content.ReadFile("jokes.json")
 	if err != nil {
 		return nil, err
 	}
