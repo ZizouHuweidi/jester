@@ -58,7 +58,7 @@ func init() {
 }
 
 func readJokesFromFile() ([]Joke, error) {
-	file, err := content.ReadFile("jokes.json")
+	file, err := content.ReadFile("../jokes.json")
 	if err != nil {
 		return nil, err
 	}
