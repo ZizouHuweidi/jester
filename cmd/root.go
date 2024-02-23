@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"embed"
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"math/rand"
@@ -16,10 +16,10 @@ type Joke struct {
 	Punchline string `json:"punchline"`
 }
 
-var (
-	content  embed.FS
-	category string
-)
+//go:embed jokes.json
+var content []byte
+
+var category string
 
 var rootCmd = &cobra.Command{
 	Use:   "jester",
@@ -53,13 +53,8 @@ func init() {
 }
 
 func readJokesFromFile() ([]Joke, error) {
-	file, err := content.ReadFile("../jokes.json")
-	if err != nil {
-		return nil, err
-	}
-
 	var jokes []Joke
-	err = json.Unmarshal(file, &jokes)
+	err := json.Unmarshal(content, &jokes)
 	if err != nil {
 		return nil, err
 	}
